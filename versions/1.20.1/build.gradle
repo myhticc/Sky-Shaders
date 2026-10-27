@@ -1,0 +1,39 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version '1.14.10'
+}
+
+version = '1.1.2+1.20.1'
+group = 'dev.x1eqn.skyshaders'
+base { archivesName = 'sky-shaders' }
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.terraformersmc.com/releases/' }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings loom.officialMojangMappings()
+    modImplementation 'net.fabricmc:fabric-loader:0.19.3'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.92.6+1.20.1'
+    modCompileOnly 'io.github.llamalad7:mixinextras-fabric:0.5.4'
+    modCompileOnly 'com.terraformersmc:modmenu:7.2.2'
+    modRuntimeOnly 'com.terraformersmc:modmenu:7.2.2'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('jar') { from('LICENSE_x1eqn') }

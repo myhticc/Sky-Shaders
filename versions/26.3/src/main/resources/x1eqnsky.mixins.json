@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "dev.x1eqn.skyshaders.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "GameRendererSkyAccessor",
+    "SkyShadersProjectionMixin",
+    "SkyShadersLevelRendererMixin",
+    "SkyShadersCloudMixin",
+    "SkyShadersSkyRendererMixin",
+    "SkyShadersFogMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

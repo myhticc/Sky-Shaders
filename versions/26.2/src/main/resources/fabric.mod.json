@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "x1eqn_sky_shaders",
+  "version": "${version}",
+  "name": "Sky Shaders",
+  "description": "x1eqn's original OpenGL sky engine, nine sky presets and 31 color themes. Configure through Mod Menu.",
+  "authors": [
+    "x1eqn"
+  ],
+  "license": "LicenseRef-x1eqn",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.x1eqn.skyshaders.SkyShadersClient"
+    ],
+    "modmenu": [
+      "dev.x1eqn.skyshaders.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "x1eqnsky.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": ">=20.0.3 <21"
+  }
+}

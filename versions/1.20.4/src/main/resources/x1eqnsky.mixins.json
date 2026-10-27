@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "dev.x1eqn.skyshaders.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "SkyShadersLevelRendererMixin",
+    "SkyShadersSkyRendererMixin",
+    "SkyShadersFogMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
